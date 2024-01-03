@@ -1,0 +1,48 @@
+@forward "./payment";
+@forward "./checkout";
+@use "./font" as *;
+@use "./colors" as *;
+
+$dashboardGap: 1.875rem;
+
+.dashboard-main-section {
+  max-width: 100rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-inline: 3rem;
+
+  .dashboard-title-container {
+    padding-block: $dashboardGap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .dashboard-title {
+      font-size: 2.1875rem;
+      font-family: $font900;
+    }
+
+    .outputDate {
+      color: $fadeClr;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  width: 70%;
+}
+
+.two-section-wrapper {
+  display: flex;
+  gap: 1.875rem;
+}
+
+div.swal-title {
+  font-family: $font400;
+}

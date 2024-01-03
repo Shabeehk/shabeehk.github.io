@@ -1,0 +1,85 @@
+@use "./font" as *;
+@use "./colors" as *;
+
+button {
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  font-family: $font900;
+  background-color: $buttonClr;
+  color: $primaryClr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: $hoverClr;
+    border-color: transparent;
+  }
+}
+
+.login-button {
+  background-color: transparent;
+  border: 1px solid $primaryClr;
+}
+
+.signup-button {
+  border-color: transparent;
+}
+
+.bottom-button-container {
+  text-align: center;
+}
+
+.banner-signup-button {
+  width: 100%;
+  border: none;
+  padding: 1rem 2rem;
+}
+
+.logout-button {
+  @extend .login-button;
+}
+
+//NOTE: DASHBOARD
+
+.dashboard-button-wrapper {
+  display: flex;
+  gap: 20px;
+
+  a {
+    text-decoration: none;
+  }
+  .contact-support-button {
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+
+    &:hover {
+      background-color: $buttonClr;
+      border-color: transparent;
+    }
+  }
+}
+
+input[type="number"] {
+  font-size: 1rem;
+  width: 3rem;
+  height: 0;
+}
+
+.customize-section--button-container {
+  display: flex;
+  justify-content: end;
+  gap: 1.5rem;
+  margin-bottom: 0 !important;
+
+  a {
+    text-decoration: none;
+
+    .BackDashboardButton {
+      background-color: transparent;
+      color: #121212;
+    }
+  }
+}

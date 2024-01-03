@@ -1,0 +1,30 @@
+{
+  "name": "laundrybookingsystem",
+  "version": "1.0.0",
+  "description": "",
+  "source": [
+    "src/index.html",
+    "src/payment/index.html",
+    "src/Dashboard/index.html",
+    "src/Checkout/index.html"
+  ],
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "sass:watch": "sass --watch src/sass:src/dist/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "parcel": "^2.8.2",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^0.2.28",
+    "rough-notation": "^0.5.1",
+    "sweetalert": "^2.1.2"
+  }
+}

@@ -1,0 +1,96 @@
+@use "./colors" as *;
+@use "./font" as *;
+
+.about {
+  text-align: center;
+
+  .banner {
+    background-color: $accentClr;
+    padding-block: 1em;
+    padding-inline: min(10%, 12.5rem);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    p {
+      color: $primaryClr;
+    }
+  }
+
+  .article-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-block: min(10%, 7rem);
+
+    article {
+      display: flex;
+      align-items: center;
+      text-align: start;
+      width: 100%;
+      user-select: none;
+
+      & > * {
+        flex: 1;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .content-wrapper {
+        display: grid;
+        place-items: center;
+
+        div {
+          padding-inline: 1.5em;
+
+          span {
+            background-color: $accentClr;
+            color: $primaryClr;
+            padding: 0.3rem;
+            border-radius: 5px;
+            font-size: 0.625rem;
+            font-family: $font900;
+          }
+
+          h2 {
+            font-size: clamp(2rem, 0.6299rem + 1.5584vw, 3.75rem);
+            margin-block: 1.125rem;
+            font-family: $font500;
+          }
+
+          p {
+            color: $tertiaryClr;
+            max-width: 50ch;
+            font-family: $font500;
+            font-weight: 500;
+            margin-bottom: 1rem;
+          }
+
+          margin-left: 2rem;
+
+          li {
+            color: $tertiaryClr;
+            font-family: $font300;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            #list-checkbox {
+              width: 1.2rem;
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@forward "./card";
+@use "./colors" as *;
+@use "./font" as *;
+
+@mixin header() {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $accentClr;
+}
+
+.main-header {
+  @include header();
+  width: min(90%, 77em);
+  padding-block: 1.5em;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  font-family: $font900;
+  box-shadow: 0px 5px 45px -10px #000000;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: min(7%, 12.5rem);
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      a {
+        text-decoration: none;
+        color: $buttonClr;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+          color: $primaryClr;
+        }
+      }
+    }
+
+    img {
+      object-fit: contain;
+      max-width: 15rem;
+      z-index: 1;
+    }
+  }
+}
+
+.scroll-up header {
+  margin-top: -100%;
+}
+
+// NOTE: HAMBURGER MENU BUTTON
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #fff;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+.ham8 .top {
+  stroke-dasharray: 40 160;
+}
+.ham8 .middle {
+  stroke-dasharray: 40 142;
+  transform-origin: 50%;
+  transition: transform 400ms;
+}
+.ham8 .bottom {
+  stroke-dasharray: 40 85;
+  transform-origin: 50%;
+  transition: transform 400ms, stroke-dashoffset 400ms;
+}
+.ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+.ham8.active .middle {
+  //stroke-dashoffset: -20px;
+  transform: rotate(90deg);
+}
+.ham8.active .bottom {
+  stroke-dashoffset: -64px;
+}
+
+.dashboard-header {
+  color: $primaryClr;
+  padding: 2rem 6rem;
+  max-width: 90rem;
+  background-color: $accentClr;
+  margin: auto;
+
+  img {
+    width: 15rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
